@@ -1672,3 +1672,34 @@ footer a:hover {
   }
 
 }
+
+/* ================= NAVIGATION IMPROVEMENT ================= */
+
+.nav-pill a {
+    position: relative;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.nav-pill a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-pill a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-pill a:hover::after,
+.nav-pill a.active::after {
+    transform: scaleX(1);
+}
