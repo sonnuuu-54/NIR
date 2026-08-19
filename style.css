@@ -1692,3 +1692,234 @@ footer a:hover {
   }
 
 }
+
+/* ================= NAVIGATION IMPROVEMENT ================= */
+
+.nav-pill a {
+    position: relative;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.nav-pill a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-pill a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-pill a:hover::after,
+.nav-pill a.active::after {
+    transform: scaleX(1);
+}
+
+
+
+/* =====================================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+===================================================== */
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    /* Navigation */
+
+    .nav-pill {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        padding-top: 140px;
+        padding-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 10vw, 6rem);
+        line-height: .95;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+
+    /* Projects */
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* Skills */
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 640px) {
+
+    /* Global */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 16vw, 5rem);
+        line-height: .9;
+        word-break: normal;
+    }
+
+    .hero-subtitle {
+        font-size: .95rem;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+
+    /* Projects */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+
+    /* Skills */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill {
+        width: 100%;
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+
+    /* Disable large hover transforms on touch devices */
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .magnetic:hover {
+        transform: none;
+    }
+
+}
